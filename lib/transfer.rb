@@ -25,4 +25,11 @@ class Transfer
       puts "Invalid Transaction"
     end
   end
+
+  def reverse_transfer
+    if @status == "executed"
+      receiver.deposit(-1 * @amount)
+      sender.deposit(@amount)
+      @status = "reversed"
+  end
 end

@@ -9,7 +9,9 @@ class BankAccount
   end
 
   def deposit(amount)
-    @balance += amount
+    if self.valid?
+      @balance += amount
+    end
   end
 
   def display_balance

@@ -20,14 +20,14 @@ class Transfer
     if self.valid? && sender.balance > @amount && @status == "pending"
       sender.deposit(-1 * @amount)
       receiver.deposit(@amount)
-      @status = "executed"
+      @status = "complete"
     else
       puts "Invalid Transaction"
     end
   end
 
   def reverse_transfer
-    if @status == "executed"
+    if @status == "complete"
       receiver.deposit(-1 * @amount)
       sender.deposit(@amount)
       @status = "reversed"

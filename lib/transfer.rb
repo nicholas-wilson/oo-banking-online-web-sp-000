@@ -21,6 +21,8 @@ class Transfer
       sender.deposit(-1 * @amount)
       receiver.deposit(@amount)
       @status = "executed"
+    else
+      puts "Invalid Transaction"
     end
   end
 end

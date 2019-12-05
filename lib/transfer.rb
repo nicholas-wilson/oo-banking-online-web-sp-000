@@ -31,5 +31,6 @@ class Transfer
       receiver.deposit(-1 * @amount)
       sender.deposit(@amount)
       @status = "reversed"
+    end
   end
 end

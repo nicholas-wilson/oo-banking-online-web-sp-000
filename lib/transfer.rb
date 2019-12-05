@@ -7,5 +7,10 @@ class Transfer
     @receiver = receiver
   end
 
-  def
+  def valid?
+    if sender.valid? && receiver.valid?
+      true
+    else
+      false
+    end
 end
